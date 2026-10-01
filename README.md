@@ -4,8 +4,18 @@ One-page static site for Danis Associates, Certified Public Accountants in
 Public Practice & Tax Consultants, Dar es Salaam. Plain HTML: no build step,
 no dependencies.
 
-- `index.html` — the whole site
+Pages: `index.html` (home), four service pages, `about.html`,
+`compliance-calendar.html` and `contact.html`.
+
+- `assets/site.css` — shared styles for every page
 - `assets/logo-maroon.png`, `assets/logo-white.png` — logo for light and dark backgrounds
+- `tools/build.py` — generates all the pages (shared header, footer and side panel)
+
+## Editing
+
+Change the content or contact details in `tools/build.py`, then run
+`python3 tools/build.py` and commit the regenerated `.html` files.
+Don't edit the `.html` files directly: they are overwritten on the next build.
 
 ## Contact details used
 
@@ -17,7 +27,7 @@ no dependencies.
 | Email                    | infodanisassociates@gmail.com      |
 | Postal address           | P.O. Box 2786, Dar es Salaam       |
 
-To change the WhatsApp number, find-and-replace `255755656369` in `index.html`.
+To change the WhatsApp number, edit `WHATSAPP` at the top of `tools/build.py` and rebuild.
 
 ## Preview
 
