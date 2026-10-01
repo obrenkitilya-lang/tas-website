@@ -1,10 +1,11 @@
 # Danis Associates — website
 
-One-page static site for Danis Associates, Certified Public Accountants in
+Static website for Danis Associates, Certified Public Accountants in
 Public Practice & Tax Consultants, Dar es Salaam. Plain HTML: no build step,
 no dependencies.
 
-Pages: `index.html` (home), four service pages, `about.html`,
+Pages: `index.html` (home), four service-line pages (Audit & Assurance, Tax,
+Advisory, Outsourcing), four industry pages, `about.html`,
 `compliance-calendar.html` and `contact.html`.
 
 - `assets/site.css` — shared styles for every page

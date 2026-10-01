@@ -1,6 +1,6 @@
 """Builds the Danis Associates website.
 
-Every page shares the same header, footer and side panel, so they are
+Every page shares the same header, footer and side panels, so they are
 generated from this one file. Edit the content below, then run:
 
     python3 tools/build.py
@@ -22,17 +22,185 @@ CONTACT_NAME = "Obren Allan Kitilya"
 CONTACT_ROLE = "Manager, Tax &amp; Legal"
 WHATSAPP = "255755656369"
 WHATSAPP_DISPLAY = "+255 755 656 369"
+WA_LINK = f"https://wa.me/{WHATSAPP}?text=Hello%20Danis%20Associates%2C%20I%20would%20like%20to%20request%20a%20consultation%20regarding%3A%20"
 
-# (file, menu label, short summary) for each service page
+# ------------------------------------------------------------------ content
+# Each service line is one page; each area is a section on that page.
 SERVICES = [
-    ("tax-compliance.html", "Tax Compliance",
-     "Registration, returns and payments for income tax, PAYE, SDL, VAT and withholding tax."),
-    ("tax-audits-and-disputes.html", "Tax Audits, Examinations &amp; Disputes",
-     "Support through TRA audits and examinations, objections and the resolution of tax disputes."),
-    ("business-registration.html", "Business Registration &amp; Company Secretarial",
-     "Company and business name registration, BRELA filings, statutory changes and licences."),
-    ("accounting-and-advisory.html", "Accounting &amp; Advisory",
-     "Bookkeeping, financial statements, tax health checks and advice before key decisions."),
+    {
+        "file": "audit-and-assurance.html",
+        "name": "Audit &amp; Assurance",
+        "summary": "Statutory audits, donor and project audits, internal audit and special investigations that give stakeholders confidence in your financial information.",
+        "intro": "Independent, high-quality assurance gives shareholders, boards, lenders, donors and regulators confidence in the information you report. Our audit approach is risk-based and grounded in a practical understanding of your organisation, so that our work adds value beyond the audit opinion.",
+        "areas": [
+            ("statutory-audit", "Statutory Audit",
+             """<p>We audit financial statements in accordance with International Standards on Auditing (ISAs) and the requirements of the Companies Act and other applicable legislation. Our engagements cover companies, partnerships, cooperatives and other entities that require an independent audit opinion.</p>
+      <ol>
+        <li>Planning based on an understanding of the entity, its environment and its key risks;</li>
+        <li>Evaluation of internal controls relevant to financial reporting;</li>
+        <li>Substantive testing of balances, transactions and disclosures;</li>
+        <li>Review of compliance with the applicable financial reporting framework, such as IFRS or IFRS for SMEs;</li>
+        <li>An audit report and a management letter setting out control weaknesses and recommendations.</li>
+      </ol>"""),
+            ("donor-and-project-audits", "Donor &amp; Project Audits",
+             """<p>Non-governmental organisations and donor-funded projects must account for funds in line with the terms of their grant agreements and the reporting requirements of their development partners. We carry out:</p>
+      <ul class="list">
+        <li>Audits of NGO and project financial statements;</li>
+        <li>Grant and project audits to donor-specific terms of reference;</li>
+        <li>Expenditure verification and agreed-upon procedures engagements;</li>
+        <li>Reviews of compliance with grant conditions and procurement requirements.</li>
+      </ul>"""),
+            ("internal-audit", "Internal Audit",
+             """<p>We provide outsourced and co-sourced internal audit services to organisations that need an effective internal audit function without the cost of a full in-house team. Our work includes risk-based internal audit plans, reviews of internal controls and processes, follow-up of management actions, and reporting to the board or audit committee.</p>"""),
+            ("special-audits-and-investigations", "Special Audits &amp; Forensic Investigations",
+             """<p>Where there are concerns about fraud, misappropriation or irregularities, or where a specific matter requires independent examination, we carry out special audits and investigations. Our work includes fact-finding, analysis of transactions and records, and a clear written report of findings suitable for management, boards and, where required, legal proceedings.</p>
+      <p>We also perform agreed-upon procedures engagements, reporting factual findings on specific matters agreed with the client.</p>"""),
+        ],
+    },
+    {
+        "file": "tax.html",
+        "name": "Tax",
+        "summary": "Tax compliance, tax advisory and support through TRA audits, examinations, objections and disputes.",
+        "intro": "Tanzania's tax environment is complex and changes frequently. We help organisations meet their obligations to the Tanzania Revenue Authority accurately and on time, plan transactions with the tax consequences understood, and resolve disputes when they arise.",
+        "areas": [
+            ("tax-compliance", "Tax Compliance",
+             """<p>We prepare and file returns accurately and on time, supported by proper records.</p>
+      <ol>
+        <li>TIN registration and registration for the taxes that apply to your business, including VAT;</li>
+        <li>Income tax computations, statements of estimated tax, provisional instalments and final returns of income;</li>
+        <li>Monthly PAYE, Skills and Development Levy (SDL) and withholding tax returns;</li>
+        <li>Monthly VAT returns, review of input tax and preparation of VAT refund claims;</li>
+        <li>EFD and VFD registration and guidance;</li>
+        <li>Tax clearance certificates for licensing, tenders and other purposes.</li>
+      </ol>"""),
+            ("tax-advisory", "Tax Advisory",
+             """<p>We advise on the tax implications of significant decisions before you commit, including new investments, contracts, restructuring, the acquisition of assets and cross-border transactions. We also carry out tax health checks to identify errors and exposures across the main taxes before TRA does.</p>"""),
+            ("tax-audits-and-disputes", "Tax Audits, Examinations &amp; Disputes",
+             """<p>A TRA audit or examination requires a structured, well-documented response within the prescribed timelines. We manage the process from the first review of TRA's findings through to resolution:</p>
+      <ol>
+        <li>Review of TRA's findings for each year of income and a work plan for resolution;</li>
+        <li>Collection and review of financial records, filings and supporting documents;</li>
+        <li>Reconciliation of TRA's computations with your records to establish the correct tax position;</li>
+        <li>Preparation and submission of a written response within the prescribed timelines;</li>
+        <li>Representation at meetings and in correspondence, and follow-up until matters are resolved;</li>
+        <li>Advice to management on tax exposures and corrective action.</li>
+      </ol>
+      <p>Where an assessment is incorrect, we advise whether an objection is justified and prepare and lodge it within the statutory time limits.</p>"""),
+        ],
+    },
+    {
+        "file": "advisory.html",
+        "name": "Advisory",
+        "summary": "Risk and governance, financial due diligence, valuations, feasibility studies and professional training.",
+        "intro": "Our advisory services help boards and management make informed decisions, strengthen governance and controls, and build the capability of their finance teams.",
+        "areas": [
+            ("risk-and-governance", "Risk &amp; Governance",
+             """<p>We help organisations identify, assess and manage the risks that matter to them. Our work includes enterprise risk management frameworks, internal control design and reviews, governance reviews, and the development of policies and procedures manuals.</p>"""),
+            ("due-diligence-and-valuations", "Due Diligence, Valuations &amp; Feasibility Studies",
+             """<p>Before an acquisition, investment or financing decision, we provide independent analysis of the financial position and prospects of a business:</p>
+      <ul class="list">
+        <li>Financial and tax due diligence for buyers, investors and lenders;</li>
+        <li>Business and share valuations;</li>
+        <li>Feasibility studies and business plans for new projects and financing applications.</li>
+      </ul>"""),
+            ("training", "Training",
+             """<p>We design and deliver practical training for finance teams, management and boards, including International Financial Reporting Standards (IFRS), Tanzanian tax updates, internal controls and financial management for non-finance managers. Training can be delivered in-house and tailored to your organisation.</p>"""),
+        ],
+    },
+    {
+        "file": "outsourcing.html",
+        "name": "Outsourcing",
+        "summary": "Accounting and financial reporting, payroll, and company secretarial and business registration services.",
+        "intro": "Many organisations prefer to outsource routine finance and administrative functions so that management can focus on running the business. We provide reliable outsourced services across accounting, payroll and company secretarial work.",
+        "areas": [
+            ("accounting", "Accounting &amp; Financial Reporting",
+             """<p>We maintain accounting records, prepare bank reconciliations and monthly management accounts, and prepare annual financial statements in accordance with the applicable framework, including IFRS, IFRS for SMEs and IPSAS.</p>"""),
+            ("payroll", "Payroll",
+             """<p>We process payroll accurately and confidentially, including the computation of PAYE, the Skills and Development Levy, NSSF and WCF contributions, preparation of payslips and payroll reports, and filing of the related statutory returns.</p>"""),
+            ("company-secretarial", "Company Secretarial &amp; Business Registration",
+             """<p>We assist local and foreign investors to establish businesses in Tanzania and keep their statutory records up to date with the Business Registrations and Licensing Agency (BRELA):</p>
+      <ul class="list">
+        <li>Company and business name registration, TIN and business licences;</li>
+        <li>Annual returns and statutory filings under the Companies Act;</li>
+        <li>Changes of directors, shareholding, share capital and registered office;</li>
+        <li>Notices, resolutions and minutes of board and shareholder meetings.</li>
+      </ul>"""),
+        ],
+    },
+]
+
+INDUSTRIES = [
+    {
+        "file": "ngos-and-donor-funded-projects.html",
+        "name": "NGOs &amp; Donor-Funded Projects",
+        "summary": "Audits, financial management and compliance support for non-profits and development projects.",
+        "body": """<p class="intro">Non-governmental organisations and donor-funded projects operate under close scrutiny from development partners, regulators and the communities they serve. Accurate financial reporting and compliance with grant conditions are essential to maintaining funding.</p>
+      <h2>How we help</h2>
+      <ul class="list">
+        <li>Annual audits of NGO financial statements;</li>
+        <li>Project and grant audits to donor terms of reference, expenditure verification and agreed-upon procedures;</li>
+        <li>Financial management and internal control reviews;</li>
+        <li>Policies and procedures manuals for finance, procurement and grants management;</li>
+        <li>Outsourced accounting, payroll and tax compliance, including employment taxes;</li>
+        <li>Training for finance and programme staff.</li>
+      </ul>""",
+        "links": [("audit-and-assurance.html#donor-and-project-audits", "Donor &amp; Project Audits"),
+                  ("advisory.html#risk-and-governance", "Risk &amp; Governance"),
+                  ("outsourcing.html#accounting", "Accounting &amp; Financial Reporting")],
+    },
+    {
+        "file": "financial-services.html",
+        "name": "Financial Services",
+        "summary": "Assurance and advisory for SACCOs, microfinance institutions, insurers and other financial institutions.",
+        "body": """<p class="intro">Financial institutions, including savings and credit cooperative societies (SACCOs), microfinance institutions and insurers, face demanding regulatory, reporting and governance requirements.</p>
+      <h2>How we help</h2>
+      <ul class="list">
+        <li>Statutory audits and audits required by the relevant regulator;</li>
+        <li>Internal audit and internal control reviews, including credit and loan portfolio processes;</li>
+        <li>Risk management and governance frameworks;</li>
+        <li>Financial reporting under IFRS and regulatory reporting support;</li>
+        <li>Tax compliance and advisory;</li>
+        <li>Training for boards, management and finance staff.</li>
+      </ul>""",
+        "links": [("audit-and-assurance.html#statutory-audit", "Statutory Audit"),
+                  ("audit-and-assurance.html#internal-audit", "Internal Audit"),
+                  ("advisory.html#risk-and-governance", "Risk &amp; Governance")],
+    },
+    {
+        "file": "trade-and-manufacturing.html",
+        "name": "Trade &amp; Manufacturing",
+        "summary": "Audit, tax and advisory for manufacturers, distributors, retailers and logistics businesses.",
+        "body": """<p class="intro">Manufacturers, wholesalers, retailers and logistics businesses deal with inventory, high transaction volumes, VAT and customs exposure, and pressure on margins and working capital.</p>
+      <h2>How we help</h2>
+      <ul class="list">
+        <li>Statutory audits, including inventory and cost accounting;</li>
+        <li>VAT compliance, refund claims and tax health checks;</li>
+        <li>Support through TRA audits and examinations;</li>
+        <li>Internal controls over purchasing, inventory and sales;</li>
+        <li>Due diligence, valuations and feasibility studies for expansion and investment;</li>
+        <li>Outsourced accounting and payroll.</li>
+      </ul>""",
+        "links": [("audit-and-assurance.html#statutory-audit", "Statutory Audit"),
+                  ("tax.html#tax-compliance", "Tax Compliance"),
+                  ("advisory.html#due-diligence-and-valuations", "Due Diligence &amp; Valuations")],
+    },
+    {
+        "file": "public-sector.html",
+        "name": "Public Sector",
+        "summary": "Support for government agencies, parastatals and local government authorities.",
+        "body": """<p class="intro">Public sector entities are accountable for the use of public resources and must meet strict standards of financial reporting, internal control and governance.</p>
+      <h2>How we help</h2>
+      <ul class="list">
+        <li>Financial reporting under International Public Sector Accounting Standards (IPSAS);</li>
+        <li>Internal audit and internal control reviews;</li>
+        <li>Audits, reviews and special assignments where the firm is appointed;</li>
+        <li>Risk management and governance advisory;</li>
+        <li>Training for finance, audit and management staff.</li>
+      </ul>""",
+        "links": [("audit-and-assurance.html#internal-audit", "Internal Audit"),
+                  ("outsourcing.html#accounting", "Accounting &amp; Financial Reporting"),
+                  ("advisory.html#training", "Training")],
+    },
 ]
 
 ICONS = {
@@ -46,20 +214,22 @@ ICONS = {
     "wa": '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35zM12.04 21.8h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88a9.82 9.82 0 0 1 6.99 2.9 9.82 9.82 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.89 9.88zm8.41-18.3A11.81 11.81 0 0 0 12.04 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41z"/></svg>',
 }
 
-WA_LINK = f"https://wa.me/{WHATSAPP}?text=Hello%20Danis%20Associates%2C%20I%20would%20like%20to%20request%20a%20consultation%20regarding%3A%20"
 
+# ------------------------------------------------------------------ layout
 
 def header(active):
-    def item(key, href, label, dropdown=None):
-        cls = ' class="active"' if key == active else ""
-        if not dropdown:
-            return f'<li{cls}><a href="{href}">{label}</a></li>'
-        return (f'<li{cls}><a href="{href}">{label}{ICONS["down"]}</a>'
-                f'<ul class="dropdown">{dropdown}</ul></li>')
+    def cls(key):
+        return ' class="active"' if key == active else ""
 
-    services_dd = "".join(f'<li><a href="{f}">{label}{ICONS["chev"]}</a></li>' for f, label, _ in SERVICES)
-    about_dd = (f'<li><a href="about.html">The firm{ICONS["chev"]}</a></li>'
-                f'<li><a href="about.html#approach">Our approach{ICONS["chev"]}</a></li>')
+    mega = "".join(
+        f'<div class="mega-col"><a class="mega-head" href="{s["file"]}">{s["name"]}{ICONS["chev"]}</a><ul>'
+        + "".join(f'<li><a href="{s["file"]}#{a}">{n}</a></li>' for a, n, _ in s["areas"])
+        + "</ul></div>"
+        for s in SERVICES)
+    industries = "".join(f'<li><a href="{i["file"]}">{i["name"]}{ICONS["chev"]}</a></li>' for i in INDUSTRIES)
+    about = (f'<li><a href="about.html">The firm{ICONS["chev"]}</a></li>'
+             f'<li><a href="about.html#approach">Our approach{ICONS["chev"]}</a></li>'
+             f'<li><a href="compliance-calendar.html">Compliance calendar{ICONS["chev"]}</a></li>')
     return f"""<header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="{FIRM}, home">
@@ -67,10 +237,10 @@ def header(active):
       <span class="region">Tanzania</span>
     </a>
     <ul class="menu" id="menu">
-      {item("services", "index.html#services", "Services", services_dd)}
-      {item("insights", "compliance-calendar.html", "Compliance Calendar")}
-      {item("about", "about.html", "About us", about_dd)}
-      {item("contact", "contact.html", "Contact")}
+      <li{cls("services")}><a href="index.html#services">Services{ICONS["down"]}</a><div class="dropdown mega">{mega}</div></li>
+      <li{cls("industries")}><a href="index.html#industries">Industries{ICONS["down"]}</a><ul class="dropdown">{industries}</ul></li>
+      <li{cls("about")}><a href="about.html">About us{ICONS["down"]}</a><ul class="dropdown">{about}</ul></li>
+      <li{cls("contact")}><a href="contact.html">Contact</a></li>
     </ul>
     <a class="header-contact" href="tel:{PHONE_TEL}">{ICONS["phone"]}<span>Call <strong>{PHONE}</strong></span></a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
@@ -81,7 +251,8 @@ def header(active):
 
 
 def footer():
-    svc = "".join(f'<li><a href="{f}">{label}</a></li>' for f, label, _ in SERVICES)
+    svc = "".join(f'<li><a href="{s["file"]}">{s["name"]}</a></li>' for s in SERVICES)
+    ind = "".join(f'<li><a href="{i["file"]}">{i["name"]}</a></li>' for i in INDUSTRIES)
     others = " · ".join(f'<a href="tel:{t}">{d}</a>' for d, t in PHONES_OTHER)
     return f"""<footer class="site-footer">
   <div class="wrap">
@@ -90,11 +261,10 @@ def footer():
         <img src="assets/logo-white.png" alt="{FIRM}" width="123" height="48">
         <p>{TAGLINE}.</p>
         <p>{POSTAL}.</p>
+        <p><a href="tel:{PHONE_TEL}">{PHONE}</a> · {others}<br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
       </div>
-      <div>
-        <h4>Services</h4>
-        <ul>{svc}</ul>
-      </div>
+      <div><h4>Services</h4><ul>{svc}</ul></div>
+      <div><h4>Industries</h4><ul>{ind}</ul></div>
       <div>
         <h4>The firm</h4>
         <ul>
@@ -102,14 +272,6 @@ def footer():
           <li><a href="about.html#approach">Our approach</a></li>
           <li><a href="compliance-calendar.html">Compliance calendar</a></li>
           <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:{PHONE_TEL}">{PHONE}</a></li>
-          <li>{others}</li>
-          <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
         </ul>
       </div>
     </div>
@@ -121,27 +283,37 @@ def footer():
 </footer>"""
 
 
-def side_panel(current=None, title="Our areas", cta=True):
-    current_cls = ' class="current"'
+def panel(title, links, current=None):
     items = "".join(
-        f'<li{current_cls if f == current else ""}><a href="{f}">{label}{ICONS["chev"]}</a></li>'
-        for f, label, _ in SERVICES)
-    cta_html = f"""
-    <div class="panel-cta">
-      <h3>Speak to an adviser</h3>
-      <p>Tell us about your matter and we will arrange an initial consultation.</p>
+        f'<li{" class=" + chr(34) + "current" + chr(34) if href == current else ""}><a href="{href}">{label}{ICONS["chev"]}</a></li>'
+        for href, label in links)
+    return f'<div class="panel"><h2>{title}</h2><ul>{items}</ul></div>'
+
+
+def mini_panel(title, links):
+    items = "".join(f'<li><a href="{h}">{l}{ICONS["chev"]}</a></li>' for h, l in links)
+    return f'<div class="mini-panel"><h3>{title}</h3><ul>{items}</ul></div>'
+
+
+def cta_box():
+    return """<div class="panel-cta">
+      <h3>Speak to our team</h3>
+      <p>Tell us about your requirements and we will arrange an initial meeting.</p>
       <a class="btn btn-light" href="contact.html">Contact us</a>
-    </div>""" if cta else ""
-    return f"""<aside class="side">
-    <div class="panel">
-      <h2>{title}</h2>
-      <ul>{items}</ul>
-    </div>{cta_html}
-  </aside>"""
+    </div>"""
+
+
+def service_links():
+    return [(s["file"], s["name"]) for s in SERVICES]
+
+
+def industry_links():
+    return [(i["file"], i["name"]) for i in INDUSTRIES]
 
 
 def page(filename, title, description, body, active=None):
-    full_title = f"{title} | {FIRM}" if title != FIRM else f"{FIRM} | Certified Public Accountants &amp; Tax Consultants, Tanzania"
+    full_title = (f"{title} | {FIRM}" if title != FIRM
+                  else f"{FIRM} | Audit, Tax &amp; Advisory, Tanzania")
     html = f"""<!doctype html>
 <html lang="en">
 <head>
@@ -168,6 +340,7 @@ def page(filename, title, description, body, active=None):
 <script>
   var t = document.querySelector('.menu-toggle'), m = document.getElementById('menu');
   t.addEventListener('click', function () {{ var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', o); }});
+  m.addEventListener('click', function (e) {{ if (e.target.closest('a[href*="#"]')) {{ m.classList.remove('open'); t.setAttribute('aria-expanded', false); }} }});
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
@@ -177,84 +350,32 @@ def page(filename, title, description, body, active=None):
     print("wrote", filename)
 
 
-def service_page(filename, title, description, content):
-    body = f"""<div class="page">
+def two_col(main_html, side_html):
+    return f"""<div class="page">
   <div class="wrap page-grid">
     <article class="page-main">
-      <h1>{title}</h1>
-{content}
+{main_html}
     </article>
-    {side_panel(filename)}
+    <aside class="side">
+    {side_html}
+    </aside>
   </div>
 </div>"""
-    page(filename, title, description, body, active="services")
 
 
-# ---------------------------------------------------------------- pages
-
-def build_home():
-    tiles = "".join(f"""
-      <a class="tile" href="{f}"><h3>{label}</h3><p>{summary}</p><span class="more">Learn more {ICONS["chev"]}</span></a>"""
-                    for f, label, summary in SERVICES)
-    body = f"""<section class="hero">
-  <div class="wrap page-grid">
-    <div class="hero-text">
-      <h1>Tax, accounting and compliance advice for <strong>Tanzanian businesses</strong></h1>
-      <p class="lead">{FIRM} is a firm of Certified Public Accountants in public practice and tax consultants. We help businesses meet their obligations to the Tanzania Revenue Authority and BRELA, respond to tax audits and examinations, and maintain reliable financial records.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="contact.html">Request a consultation</a>
-        <a class="btn btn-outline" href="#services">Our services</a>
-      </div>
-    </div>
-    {side_panel(title="Our services", cta=False)}
-  </div>
-</section>
-
-<section class="section" id="services">
+def cta_band():
+    return f"""<section class="cta-band">
   <div class="wrap">
-    <div class="section-head">
-      <div><span class="eyebrow">Services</span><h2>How we can help</h2></div>
-      <p>From registration and routine monthly compliance to TRA examinations and advisory work. If your matter is not listed, contact us to discuss it.</p>
-    </div>
-    <div class="tiles">{tiles}
-    </div>
-  </div>
-</section>
-
-<section class="section grey">
-  <div class="wrap split">
     <div>
-      <span class="eyebrow">About the firm</span>
-      <h2>Qualified advisers, a clear scope and an agreed fee</h2>
-      <p style="margin-top:28px">We work with owner-managed businesses, growing companies and established organisations across Tanzania. Every engagement begins with a written proposal that sets out the scope of work, deliverables, timeline and fee, followed by a signed engagement letter.</p>
-      <p>Our advice is given in plain English or Kiswahili, including where the honest answer is that tax is due.</p>
-      <a class="btn btn-outline" href="about.html" style="margin-top:12px">About us</a>
+      <h2>Looking for an audit, tax or advisory partner?</h2>
+      <p>Contact the firm to discuss your requirements.</p>
     </div>
-    <ul class="facts">
-      <li>{ICONS["check"]}<span>Certified Public Accountants in public practice</span></li>
-      <li>{ICONS["check"]}<span>Tax consultants<small>Representation before the Tanzania Revenue Authority</small></span></li>
-      <li>{ICONS["check"]}<span>Tax examination and audit support<small>From TRA findings through to resolution</small></span></li>
-      <li>{ICONS["check"]}<span>Confidential<small>Client information is used only for the engagement instructed</small></span></li>
-      <li>{ICONS["check"]}<span>Engagements in English and Kiswahili</span></li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="wrap">
-    <div class="section-head">
-      <div><span class="eyebrow">Compliance calendar</span><h2>Key TRA deadlines</h2></div>
-      <p>Late filing and payment attract penalties and interest. These are the principal recurring deadlines for most businesses.</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="contact.html">Contact us</a>
+      <a class="btn btn-ghost" href="tel:{PHONE_TEL}">{ICONS["phone"]}{PHONE}</a>
     </div>
-    {calendar_table()}
-    <p class="note">General guidance only. <a href="compliance-calendar.html" style="color:var(--brand)">See the full compliance calendar</a>.</p>
   </div>
-</section>
-
-{cta_band()}"""
-    page("index.html", FIRM,
-         f"{FIRM}: Certified Public Accountants in public practice and tax consultants in Dar es Salaam, advising Tanzanian businesses on tax compliance, TRA audits and examinations, BRELA registration and accounting.",
-         body)
+</section>"""
 
 
 def calendar_table():
@@ -269,222 +390,189 @@ def calendar_table():
     </table>"""
 
 
-def cta_band():
-    return f"""<section class="cta-band">
-  <div class="wrap">
-    <div>
-      <h2>Need advice on a tax, compliance or registration matter?</h2>
-      <p>Contact the firm to arrange an initial consultation.</p>
+# ------------------------------------------------------------------ pages
+
+def build_home():
+    svc_tiles = "".join(f"""
+      <a class="tile" href="{s["file"]}"><span class="tile-no">0{n}</span><h3>{s["name"]}</h3><p>{s["summary"]}</p><span class="more">Learn more {ICONS["chev"]}</span></a>"""
+                        for n, s in enumerate(SERVICES, 1))
+    ind_tiles = "".join(f"""
+      <a class="tile" href="{i["file"]}"><h3>{i["name"]}</h3><p>{i["summary"]}</p><span class="more">Learn more {ICONS["chev"]}</span></a>"""
+                        for i in INDUSTRIES)
+    body = f"""<section class="hero">
+  <div class="wrap page-grid">
+    <div class="hero-text">
+      <h1>Audit, tax and advisory services <strong>you can rely on</strong></h1>
+      <p class="lead">{FIRM} is a firm of Certified Public Accountants in public practice and tax consultants in Tanzania. We provide audit and assurance, tax, advisory and outsourcing services to companies, NGOs and donor-funded projects, financial institutions and public sector entities.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="contact.html">Contact us</a>
+        <a class="btn btn-outline" href="#services">Our services</a>
+      </div>
     </div>
-    <div class="btn-row">
-      <a class="btn btn-light" href="contact.html">Contact us</a>
-      <a class="btn btn-ghost" href="tel:{PHONE_TEL}">{ICONS["phone"]}{PHONE}</a>
+    <aside class="side">{panel("Our services", service_links())}</aside>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Services</span><h2>What we do</h2></div>
+      <p>Four service lines, delivered by qualified professionals and backed by a practical understanding of the Tanzanian regulatory environment.</p>
+    </div>
+    <div class="tiles">{svc_tiles}
     </div>
   </div>
-</section>"""
+</section>
+
+<section class="section grey" id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Industries</span><h2>Sectors we serve</h2></div>
+      <p>Each sector has its own reporting, regulatory and governance requirements. We bring relevant experience to every engagement.</p>
+    </div>
+    <div class="tiles">{ind_tiles}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">About the firm</span>
+      <h2>Independent. Qualified. Committed to quality.</h2>
+      <p style="margin-top:28px">We work with owner-managed businesses, growing companies, established organisations, NGOs and public sector entities across Tanzania. Every engagement is planned and performed in accordance with applicable professional standards and laws, and led by experienced professionals.</p>
+      <p>Each engagement begins with a written proposal that sets out the scope of work, deliverables, timeline and fee, followed by a signed engagement letter.</p>
+      <a class="btn btn-outline" href="about.html" style="margin-top:12px">About us</a>
+    </div>
+    <ul class="facts">
+      <li>{ICONS["check"]}<span>Certified Public Accountants in public practice<small>Audit and assurance in accordance with International Standards on Auditing</small></span></li>
+      <li>{ICONS["check"]}<span>Tax consultants<small>Compliance, advisory and representation before the Tanzania Revenue Authority</small></span></li>
+      <li>{ICONS["check"]}<span>Advisory and outsourcing<small>Risk and governance, due diligence, valuations, accounting, payroll and company secretarial</small></span></li>
+      <li>{ICONS["check"]}<span>Independent and confidential<small>Client information is used only for the engagement instructed</small></span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section grey">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">Compliance calendar</span><h2>Key TRA deadlines</h2></div>
+      <p>Late filing and payment attract penalties and interest. These are the principal recurring deadlines for most businesses.</p>
+    </div>
+    {calendar_table()}
+    <p class="note">General guidance only. <a href="compliance-calendar.html" style="color:var(--brand)">See the compliance calendar</a>.</p>
+  </div>
+</section>
+
+{cta_band()}"""
+    page("index.html", FIRM,
+         f"{FIRM}: Certified Public Accountants in public practice and tax consultants in Tanzania, providing audit and assurance, tax, advisory and outsourcing services.",
+         body)
 
 
-def build_services():
-    service_page("tax-compliance.html", "Tax Compliance",
-        "Tax registration, returns and payments for Tanzanian businesses: income tax, PAYE, SDL, VAT and withholding tax.",
-        """      <p class="intro">Every company, partnership and individual carrying on business in Tanzania must register with the Tanzania Revenue Authority and meet a regular cycle of filing and payment deadlines. Late returns and late payments attract penalties and interest, and can affect your ability to obtain a tax clearance certificate.</p>
-      <p>We take responsibility for preparing and filing your returns accurately and on time, supported by proper records, so that you can concentrate on running your business.</p>
+def build_service(s):
+    nav = "".join(f'<a href="#{a}">{n}</a>' for a, n, _ in s["areas"])
+    sections = "".join(f"""
+      <section class="area" id="{a}">
+        <h2>{n}</h2>
+      {html}
+      </section>""" for a, n, html in s["areas"])
+    main = f"""      <h1>{s["name"]}</h1>
+      <p class="intro">{s["intro"]}</p>
+      <nav class="jump" aria-label="On this page">{nav}</nav>{sections}"""
+    side = (panel("Our areas", [(f'#{a}', n) for a, n, _ in s["areas"]])
+            + mini_panel("Other services", [(x["file"], x["name"]) for x in SERVICES if x is not s])
+            + cta_box())
+    page(s["file"], s["name"], s["summary"], two_col(main, side) + cta_band(), active="services")
 
-      <h2>What we do</h2>
-      <h3>Registration</h3>
-      <p>We obtain Taxpayer Identification Numbers (TIN) for new businesses and individuals, and register businesses for the taxes that apply to them, including VAT where turnover reaches the registration threshold.</p>
 
-      <h3>Income tax</h3>
-      <ol>
-        <li>Preparation of income tax computations in accordance with the applicable tax legislation;</li>
-        <li>Preparation and filing of statements of estimated tax and quarterly provisional instalments;</li>
-        <li>Preparation and filing of the final return of income after the end of the year of income;</li>
-        <li>Advice on allowable deductions, capital allowances and the tax treatment of specific transactions.</li>
-      </ol>
-
-      <h3>Employment taxes</h3>
-      <p>Monthly computation and filing of Pay As You Earn (PAYE) and the Skills and Development Levy (SDL), and reconciliation of employee records against amounts declared.</p>
-
-      <h3>Value Added Tax</h3>
-      <p>Preparation and filing of monthly VAT returns, review of input tax claims and supporting documentation, and preparation of VAT refund claims.</p>
-
-      <h3>Withholding tax</h3>
-      <p>Identification of payments subject to withholding tax, monthly returns and payment, and issue of withholding tax certificates.</p>
-
-      <h3>EFD and VFD</h3>
-      <p>Guidance on Electronic Fiscal Device and Virtual Fiscal Device obligations, and support with registration.</p>
-
-      <h3>Tax clearance</h3>
-      <p>Preparation of the documentation required to obtain tax clearance certificates for licensing, tenders and other purposes.</p>
-
-      <div class="callout"><p><strong>Monthly compliance.</strong> We can manage your recurring returns on an ongoing basis, with a reminder before each deadline and copies of every return filed.</p></div>""")
-
-    service_page("tax-audits-and-disputes.html", "Tax Audits, Examinations &amp; Disputes",
-        "Support through TRA tax audits and examinations, review of findings, objections and resolution of tax disputes in Tanzania.",
-        """      <p class="intro">A tax audit or examination by the Tanzania Revenue Authority requires a structured, well-documented response within the prescribed timelines. Errors at this stage can lead to assessments, penalties and interest that are difficult to reverse later.</p>
-      <p>We manage the process from the first review of TRA's findings through to resolution, establishing the correct tax position and keeping management informed throughout.</p>
-
-      <h2>Our approach to a tax examination</h2>
-      <h3>Review of TRA findings</h3>
-      <p>We analyse TRA's findings for each year of income under review, identify the issues raised and prepare a work plan for resolution.</p>
-      <h3>Collection and review of information</h3>
-      <p>We gather and review the relevant financial records, tax filings and supporting documents against TRA's findings.</p>
-      <h3>Reconciliation of TRA computations</h3>
-      <p>We compare TRA's computations with your records to establish the correct tax position for each year.</p>
-      <h3>Response to TRA</h3>
-      <p>We prepare and submit a comprehensive written response to TRA's findings within the prescribed timelines.</p>
-      <h3>Representation and follow-up</h3>
-      <p>We address queries raised by TRA, attend meetings and handle correspondence, and follow up regularly until outstanding matters are resolved.</p>
-      <h3>Advisory on tax exposures</h3>
-      <p>We advise management on potential tax exposures identified during the process and recommend corrective action.</p>
-
-      <div class="callout"><p><strong>Deliverables.</strong> A detailed reconciliation report, the official response letter to TRA, an advisory report on identified exposures and recommendations, and progress updates throughout the engagement.</p></div>
-
-      <h2>Assessments and objections</h2>
-      <p>Where TRA issues an assessment that you believe is incorrect, strict time limits and procedural requirements apply to lodging an objection. We review the assessment, advise whether an objection is justified, and prepare and lodge the objection with supporting evidence.</p>
-
-      <h2>Second opinions</h2>
-      <p>If you already have an adviser, we can review a TRA notice, assessment or recent returns and give an independent view on whether anything is wrong, the likely exposure, and the options available.</p>""")
-
-    service_page("business-registration.html", "Business Registration &amp; Company Secretarial",
-        "Company and business name registration with BRELA, annual returns, statutory changes, business licences and company secretarial support in Tanzania.",
-        """      <p class="intro">We assist local and foreign investors to establish businesses in Tanzania, and help existing companies keep their statutory records and filings up to date with the Business Registrations and Licensing Agency (BRELA).</p>
-
-      <h2>What we do</h2>
-      <h3>Registration</h3>
-      <p>We register companies and business names with BRELA. As part of our post-registration services, we obtain the company's Taxpayer Identification Number (TIN) and assist with business licences from the relevant licensing authority.</p>
-
-      <h3>Annual returns and statutory filings</h3>
-      <p>We prepare and file annual returns and ensure that the statutory filings required under the Companies Act are made on time with BRELA.</p>
-
-      <h3>Statutory changes</h3>
-      <p>We handle changes to directors, shareholding, share capital and registered office address, and file the required notifications with BRELA.</p>
-
-      <h3>Meetings and minutes</h3>
-      <p>We prepare notices, resolutions and minutes of board and shareholder meetings as required by the company.</p>
-
-      <h3>Business licences</h3>
-      <p>We prepare applications for new business licences and manage renewals before expiry.</p>
-
-      <h3>Advice</h3>
-      <p>We advise on company secretarial matters, including restructuring and changes in ownership, and keep clients informed of relevant changes in the law.</p>""")
-
-    service_page("accounting-and-advisory.html", "Accounting &amp; Advisory",
-        "Bookkeeping, bank reconciliations, financial statements, tax health checks and business advisory for Tanzanian businesses.",
-        """      <p class="intro">Accurate accounting records are the foundation of tax compliance and good management decisions. We provide accounting support to businesses that do not have, or do not need, a full in-house finance function, and advise management on the tax implications of key decisions.</p>
-
-      <h2>What we do</h2>
-      <h3>Bookkeeping</h3>
-      <p>We maintain your accounting records, process transactions and prepare monthly management information.</p>
-
-      <h3>Bank reconciliations</h3>
-      <p>We reconcile bank and cash accounts regularly and follow up on unexplained differences.</p>
-
-      <h3>Financial statements</h3>
-      <p>We prepare annual financial statements in accordance with the applicable financial reporting framework, ready for tax filing and other statutory purposes.</p>
-
-      <h3>Tax health checks</h3>
-      <p>We review your returns, records and processes across the main taxes to identify errors and exposures before TRA does, and recommend how to correct them.</p>
-
-      <h3>Tax and business advisory</h3>
-      <p>We advise on the tax implications of significant transactions and decisions, such as entering contracts, acquiring assets, restructuring or expanding, before you commit.</p>
-
-      <div class="callout"><p><strong>Outsourced finance support.</strong> Combining accounting with our tax compliance service means one adviser is responsible for both your records and your returns.</p></div>""")
+def build_industry(i):
+    links = "".join(f'<li><a href="{h}">{l}</a></li>' for h, l in i["links"])
+    main = f"""      <h1>{i["name"]}</h1>
+      {i["body"]}
+      <div class="callout"><p><strong>Related services:</strong></p><ul class="inline-links">{links}</ul></div>"""
+    side = panel("Industries", industry_links(), current=i["file"]) + cta_box()
+    page(i["file"], i["name"], i["summary"], two_col(main, side), active="industries")
 
 
 def build_about():
-    body = f"""<div class="page">
-  <div class="wrap page-grid">
-    <article class="page-main">
-      <h1>About us</h1>
-      <p class="intro">{FIRM} is a firm of Certified Public Accountants in public practice and tax consultants based in Dar es Salaam. We advise owner-managed businesses, growing companies and established organisations on tax, compliance, business registration and accounting.</p>
-      <p>Our work ranges from routine monthly filings to complex matters such as TRA tax examinations, objections and tax advisory. All services are performed in accordance with applicable tax laws and professional standards.</p>
+    main = f"""      <h1>About us</h1>
+      <p class="intro">{FIRM} is a firm of Certified Public Accountants in public practice and tax consultants based in Dar es Salaam. We provide audit and assurance, tax, advisory and outsourcing services to organisations across Tanzania.</p>
+      <p>Our clients include owner-managed businesses, growing and established companies, NGOs and donor-funded projects, financial institutions and public sector entities. All services are performed in accordance with applicable professional standards and laws.</p>
 
       <h2>Our values</h2>
-      <h3>Qualified</h3>
-      <p>Our advisers are Certified Public Accountants and tax consultants with practical experience of TRA audits and examinations, VAT refund claims, corporate income tax and financial reporting.</p>
-      <h3>Clear</h3>
-      <p>We agree the scope, deliverables, timeline and fee in writing before work begins, and explain your position plainly, in English or Kiswahili.</p>
-      <h3>Confidential</h3>
+      <h3>Independence and integrity</h3>
+      <p>We act objectively and with professional scepticism, and we say what we find.</p>
+      <h3>Quality</h3>
+      <p>Every engagement is planned, performed and reviewed in accordance with professional standards, and led by experienced professionals.</p>
+      <h3>Clarity</h3>
+      <p>We agree the scope, deliverables, timeline and fee in writing before work begins, and communicate our findings plainly, in English or Kiswahili.</p>
+      <h3>Confidentiality</h3>
       <p>Client records and information are used only for the engagement we have been instructed on.</p>
 
       <h2 id="approach">Our approach</h2>
-      <h3>1. Initial consultation</h3>
-      <p>We discuss your requirements and review the relevant documents.</p>
+      <h3>1. Initial meeting</h3>
+      <p>We discuss your requirements and review the relevant information.</p>
       <h3>2. Proposal and engagement letter</h3>
       <p>We issue a written proposal setting out the scope of work, deliverables, timeline and professional fee. Work begins once the engagement letter is signed.</p>
       <h3>3. Execution</h3>
-      <p>We carry out the work and liaise with TRA, BRELA or other authorities as required.</p>
+      <p>Our team performs the work, keeping management informed and liaising with regulators and authorities as required.</p>
       <h3>4. Reporting</h3>
-      <p>We provide progress updates, copies of everything filed, and notice of upcoming obligations.</p>
-
-      <h2>Key contact</h2>
-      <p><strong style="color:var(--ink)">{CONTACT_NAME}</strong>, {CONTACT_ROLE}<br>
-      <a href="tel:+{WHATSAPP}">{WHATSAPP_DISPLAY}</a> · <a href="{WA_LINK}" target="_blank" rel="noopener">WhatsApp</a></p>
-    </article>
-    {side_panel()}
-  </div>
-</div>
-{cta_band()}"""
+      <p>We deliver our reports and recommendations and, where relevant, agree follow-up actions.</p>"""
+    side = panel("Our services", service_links()) + mini_panel("Industries", industry_links()) + cta_box()
     page("about.html", "About us",
          f"About {FIRM}, Certified Public Accountants in public practice and tax consultants in Dar es Salaam.",
-         body, active="about")
+         two_col(main, side) + cta_band(), active="about")
 
 
 def build_calendar():
-    body = f"""<div class="page">
-  <div class="wrap page-grid">
-    <article class="page-main">
-      <h1>Compliance calendar</h1>
-      <p class="intro">Missing a filing or payment deadline attracts penalties and interest from the day after the due date. The table below summarises the principal recurring TRA deadlines for most businesses.</p>
+    main = f"""      <h1>Compliance calendar</h1>
+      <p class="intro">Missing a filing or payment deadline attracts penalties and interest from the day after the due date. The table below summarises the principal recurring Tanzania Revenue Authority deadlines for most businesses.</p>
       {calendar_table()}
       <p class="note">If a due date falls on a weekend or public holiday, confirm the applicable date with TRA or your adviser.</p>
-
       <h2>Other recurring obligations</h2>
+      <h3>Audited financial statements</h3>
+      <p>Companies must prepare financial statements each year, and those required to be audited should plan the audit early enough to meet their filing and reporting deadlines.</p>
       <h3>BRELA annual returns</h3>
       <p>Companies must file annual returns with BRELA each year. The due date depends on the company's date of incorporation.</p>
       <h3>Business licences</h3>
-      <p>Business licences must be renewed before they expire. Check the expiry date on your current licence.</p>
-
-      <div class="callout"><p><strong>General guidance only.</strong> Specific obligations depend on the nature of your business. <a href="contact.html">Contact us</a> for advice on your position, or to have us manage your filings.</p></div>
-    </article>
-    {side_panel()}
-  </div>
-</div>"""
+      <p>Business licences must be renewed before they expire.</p>
+      <div class="callout"><p><strong>General guidance only.</strong> Specific obligations depend on the nature of your organisation. <a href="contact.html">Contact us</a> for advice on your position.</p></div>"""
+    side = panel("Our services", service_links()) + cta_box()
     page("compliance-calendar.html", "Compliance calendar",
-         "Key Tanzania Revenue Authority filing and payment deadlines: PAYE, SDL, withholding tax, VAT, provisional tax and final returns.",
-         body, active="insights")
+         "Key Tanzania Revenue Authority filing and payment deadlines and other recurring compliance obligations.",
+         two_col(main, side), active="about")
 
 
 def build_contact():
     others = " · ".join(d for d, _ in PHONES_OTHER)
-    body = f"""<div class="page">
-  <div class="wrap page-grid">
-    <article class="page-main">
-      <h1>Contact us</h1>
-      <p class="intro">Tell us about your matter and we will arrange an initial consultation. Copies of any TRA notices, assessments or correspondence help us respond quickly.</p>
+    main = f"""      <h1>Contact us</h1>
+      <p class="intro">To discuss an audit, tax, advisory or outsourcing requirement, contact the firm by telephone or email and we will arrange an initial meeting.</p>
       <div class="contact-cards">
         <a class="c-card" href="tel:{PHONE_TEL}">{ICONS["phone"]}<span class="c-label">Telephone</span><span class="c-value">{PHONE}</span><span class="c-sub">{others}</span></a>
-        <a class="c-card" href="mailto:{EMAIL}?subject=Consultation%20request">{ICONS["mail"]}<span class="c-label">Email</span><span class="c-value">{EMAIL.replace("@", "<wbr>@")}</span></a>
+        <a class="c-card" href="mailto:{EMAIL}?subject=Enquiry">{ICONS["mail"]}<span class="c-label">Email</span><span class="c-value">{EMAIL.replace("@", "<wbr>@")}</span></a>
         <div class="c-card">{ICONS["pin"]}<span class="c-label">Postal address</span><span class="c-value">{POSTAL}</span></div>
         <a class="c-card" href="{WA_LINK}" target="_blank" rel="noopener">{ICONS["user"]}<span class="c-label">Tax &amp; Legal</span><span class="c-value">{CONTACT_NAME}</span><span class="c-sub">{CONTACT_ROLE} · {WHATSAPP_DISPLAY} · WhatsApp</span></a>
       </div>
       <div class="btn-row">
-        <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Consultation%20request">{ICONS["mail"]}Email the firm</a>
-        <a class="btn btn-outline" href="{WA_LINK}" target="_blank" rel="noopener">{ICONS["wa"]}Message on WhatsApp</a>
-      </div>
-    </article>
-    {side_panel(cta=False)}
-  </div>
-</div>"""
+        <a class="btn btn-primary" href="mailto:{EMAIL}?subject=Enquiry">{ICONS["mail"]}Email the firm</a>
+        <a class="btn btn-outline" href="tel:{PHONE_TEL}">{ICONS["phone"]}Call {PHONE}</a>
+      </div>"""
+    side = panel("Our services", service_links())
     page("contact.html", "Contact us",
-         f"Contact {FIRM} in Dar es Salaam: telephone, email and WhatsApp.",
-         body, active="contact")
+         f"Contact {FIRM} in Dar es Salaam: telephone, email and postal address.",
+         two_col(main, side), active="contact")
 
 
 if __name__ == "__main__":
+    for old in ["tax-compliance.html", "tax-audits-and-disputes.html",
+                "business-registration.html", "accounting-and-advisory.html"]:
+        (ROOT / old).unlink(missing_ok=True)
     build_home()
-    build_services()
+    for s in SERVICES:
+        build_service(s)
+    for i in INDUSTRIES:
+        build_industry(i)
     build_about()
     build_calendar()
     build_contact()
