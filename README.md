@@ -4,13 +4,20 @@ Static website for Danis Associates, Certified Public Accountants in
 Public Practice & Tax Consultants, Dar es Salaam. Plain HTML: no build step,
 no dependencies.
 
-Pages: `index.html` (home), four service-line pages (Audit & Assurance, Tax,
-Advisory, Outsourcing), four industry pages, `about.html`,
-`compliance-calendar.html` and `contact.html`.
+Pages: home, services and industries overviews, four service-line pages
+(Audit & Assurance, Tax, Advisory, Outsourcing), four industry pages, About,
+Compliance calendar and Contact.
 
 - `assets/site.css` — shared styles for every page
 - `assets/logo-maroon.png`, `assets/logo-white.png` — logo for light and dark backgrounds
-- `tools/build.py` — generates all the pages (shared header, footer and side panel)
+- `assets/img/` — illustrations for each service and industry
+- `tools/build.py` — generates all the pages (shared header and footer)
+- `tools/art.py` — generates the illustrations
+
+## Using real photos
+
+Save a photo in `assets/img/` (e.g. `audit.jpg`), change that page's
+`"image"` value in `tools/build.py`, then rebuild.
 
 ## Editing
 
