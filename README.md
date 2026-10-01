@@ -1,30 +1,31 @@
-# Tax & Accounting Solutions — website
+# Danis Associates — website
 
-A one-page static site: a single `index.html` with no build step and no dependencies.
+One-page static site for Danis Associates, Certified Public Accountants in
+Public Practice & Tax Consultants, Dar es Salaam. Plain HTML: no build step,
+no dependencies.
 
-## 1. Fill in your details
+- `index.html` — the whole site
+- `assets/logo-maroon.png`, `assets/logo-white.png` — logo for light and dark backgrounds
 
-Open `index.html` and use find-and-replace on these placeholders:
+## Contact details used
 
-| Placeholder        | Replace with                                   | Example                      |
-|--------------------|------------------------------------------------|------------------------------|
-| `255XXXXXXXXX`     | WhatsApp/phone number, digits only, with 255   | `255712345678`               |
-| `+255 XXX XXX XXX` | The same number, formatted for people to read  | `+255 712 345 678`           |
-| `you@example.com`  | Your email                                     | `info@tas.co.tz`             |
-| `[YOUR AREA]`      | Your area in Dar es Salaam                     | `Mikocheni`                  |
-| `[YOUR HOURS]`     | Opening hours                                  | `Mon–Fri 8:00–17:00`         |
+| Where                    | Value                              |
+|--------------------------|------------------------------------|
+| WhatsApp buttons         | +255 755 656 369 (Tax & Legal)     |
+| Office phone / Call us   | +255 767 889 960                   |
+| Other office lines       | 0628 304 441 · 0755 738 183        |
+| Email                    | infodanisassociates@gmail.com      |
+| Postal address           | P.O. Box 2786, Dar es Salaam       |
 
-Every "Chat on WhatsApp" button opens WhatsApp with this message already typed:
-"Hello Tax & Accounting Solutions, I would like help with: ".
+To change the WhatsApp number, find-and-replace `255755656369` in `index.html`.
 
-## 2. Preview
+## Preview
 
 Double-click `index.html` to open it in your browser.
 
-## 3. Put it online (free options)
+## Put it online (free)
 
-- **Netlify Drop**: go to https://app.netlify.com/drop and drag this folder onto the page. You get a live link in seconds.
-- **GitHub Pages**: in the repository settings, go to Pages, set the source to this branch, and serve from the root (`/`) folder.
-- **Cloudflare Pages / Vercel**: create a project from this repository and leave the output directory as the root.
+- **GitHub Pages**: repository Settings → Pages → Deploy from a branch → `main`, `/ (root)`.
+- **Netlify Drop**: drag this folder onto https://app.netlify.com/drop.
 
-To use your own domain (e.g. a `.co.tz` address), buy it from a registrar and point it at the host using that host's custom-domain instructions.
+To use a custom domain, point it at the host using that host's custom-domain instructions.

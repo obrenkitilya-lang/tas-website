@@ -3,39 +3,29 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tax &amp; Accounting Solutions | Tax, TRA &amp; BRELA services in Dar es Salaam</title>
-<meta name="description" content="Tax &amp; Accounting Solutions helps businesses in Tanzania register, file and stay on the right side of TRA and BRELA, for a fixed fee agreed before any work starts.">
-<meta property="og:title" content="Tax &amp; Accounting Solutions">
+<title>Danis Associates | Certified Public Accountants &amp; Tax Consultants, Dar es Salaam</title>
+<meta name="description" content="Danis Associates: Certified Public Accountants in public practice and tax consultants helping businesses in Tanzania register, file and stay on the right side of TRA and BRELA.">
+<meta property="og:title" content="Danis Associates">
 <meta property="og:description" content="Your taxes and registrations, handled properly. TRA, BRELA, VAT, PAYE and bookkeeping in Tanzania.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#131a2c">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%23131a2c'/%3E%3Ccircle cx='32' cy='32' r='28' fill='none' stroke='%23d9aa4e' stroke-width='3'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-family='Georgia,serif' font-size='20' fill='%23d9aa4e'%3ETAS%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#7e0505">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237e0505'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-weight='700' font-size='40' fill='%23fff'%3ED%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<!--
-  =====================================================================
-  BEFORE YOU PUBLISH: replace these placeholders everywhere in this file
-    255XXXXXXXXX        -> your WhatsApp/phone number in international
-                           format, digits only (e.g. 255712345678)
-    +255 XXX XXX XXX    -> the same number as people should read it
-    you@example.com     -> your email address
-    [YOUR AREA]         -> your area in Dar es Salaam (e.g. Mikocheni)
-    [YOUR HOURS]        -> e.g. Mon–Fri, 8:00–17:00 · Sat, 9:00–13:00
-  =====================================================================
--->
 <style>
   :root {
-    --navy: #131a2c;
-    --navy-2: #1c2439;
-    --navy-line: #2a3350;
-    --gold: #d9aa4e;
-    --gold-soft: #e8c883;
-    --cream: #f6f3ec;
+    --brand: #7e0505;
+    --navy: #6b0606;
+    --navy-2: rgba(255,255,255,.07);
+    --navy-line: rgba(255,255,255,.18);
+    --gold: #f3cfc0;
+    --gold-soft: #ffffff;
+    --cream: #f8f3ee;
     --white: #ffffff;
-    --ink: #131a2c;
-    --muted: #5b6275;
-    --muted-dark: #aab0c0;
+    --ink: #1f1a1a;
+    --muted: #645b5b;
+    --muted-dark: rgba(255,255,255,.72);
     --serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
     --sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
     --wrap: 1120px;
@@ -58,7 +48,8 @@
   p { margin: 0; }
   ul { margin: 0; padding: 0; list-style: none; }
   .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
-  .dark { background: var(--navy); color: var(--white); }
+  .dark { background: linear-gradient(160deg, #7e0505 0%, #520404 100%); color: var(--white); }
+  .light, .cream, .values, header { --gold: var(--brand); }
   .cream { background: var(--cream); }
   section { padding: 96px 0; }
 
@@ -67,7 +58,7 @@
     text-transform: uppercase; color: var(--gold);
     margin-bottom: 18px;
   }
-  .cream .eyebrow, .light .eyebrow { color: #b8862b; }
+  
   .divider {
     display: flex; align-items: center; gap: 10px;
     margin: 20px 0 0; color: var(--gold);
@@ -90,18 +81,20 @@
     white-space: nowrap;
   }
   .btn:hover { transform: translateY(-1px); }
-  .btn-gold { background: var(--gold); color: var(--navy); }
-  .btn-gold:hover { background: var(--gold-soft); border-color: var(--gold-soft); }
-  .btn-ghost { background: transparent; color: var(--white); }
-  .btn-ghost:hover { background: rgba(217,170,78,.12); }
+  .btn-gold { background: #fff; color: var(--brand); border-color: #fff; }
+  header .btn-gold { background: var(--brand); color: #fff; border-color: var(--brand); }
+  .btn-gold:hover { background: #f8e9e4; border-color: #f8e9e4; }
+  header .btn-gold:hover { background: #5c0404; border-color: #5c0404; }
+  .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,.7); }
+  .btn-ghost:hover { background: rgba(255,255,255,.1); }
   .btn svg { width: 18px; height: 18px; }
   .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
 
   /* Header */
   header {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(19,26,44,.97); backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--navy-line); color: var(--white);
+    background: rgba(255,255,255,.97); backdrop-filter: blur(6px);
+    border-bottom: 1px solid #eadfdf; color: var(--ink); box-shadow: 0 1px 12px rgba(60,0,0,.05);
   }
   .nav { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 24px; }
   .brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
@@ -111,15 +104,16 @@
     display: grid; place-items: center;
     font-family: var(--serif); font-size: 15px; letter-spacing: .02em;
   }
-  .brand-text { border-left: 1px solid var(--gold); padding-left: 16px; }
+  .brand-logo { height: 54px; width: auto; display: block; }
+  .brand-text { border-left: 1px solid #d8c4c4; padding-left: 16px; }
   .brand-name { font-family: var(--serif); font-weight: 700; font-size: 18px; line-height: 1.25; display: block; }
-  .brand-tag { font-size: 10.5px; letter-spacing: .16em; color: var(--gold); display: block; margin-top: 2px; }
+  .brand-tag { font-size: 11px; letter-spacing: .06em; color: var(--muted); display: block; line-height: 1.45; }
   .nav-links { display: flex; align-items: center; gap: 30px; font-size: 14px; font-weight: 500; }
   .nav-links a:not(.btn) { text-decoration: none; opacity: .9; }
-  .nav-links a:not(.btn):hover { color: var(--gold); opacity: 1; }
+  .nav-links a:not(.btn):hover { color: var(--brand); opacity: 1; }
   .nav-links .btn { padding: 10px 20px; font-size: 14px; }
   .menu-toggle {
-    display: none; background: none; border: 1px solid var(--navy-line); color: var(--white);
+    display: none; background: none; border: 1px solid #e3d6d6; color: var(--ink);
     width: 44px; height: 44px; border-radius: 8px; cursor: pointer;
   }
   .menu-toggle svg { width: 22px; height: 22px; margin: auto; }
@@ -129,10 +123,10 @@
   .hero-arc { position: absolute; left: -8%; top: 44%; width: 62%; min-width: 520px; pointer-events: none; }
   .hero-grid { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; }
   .hero h1 { font-size: clamp(38px, 5.4vw, 60px); margin-bottom: 26px; }
-  .hero-lede { color: #d4d8e2; font-size: 17px; max-width: 520px; margin-bottom: 34px; }
+  .hero-lede { color: rgba(255,255,255,.88); font-size: 17px; max-width: 520px; margin-bottom: 34px; }
   .dates {
     background: var(--navy-2); border: 1px solid var(--navy-line); border-radius: 14px;
-    padding: 32px 32px 26px; box-shadow: 0 30px 60px rgba(0,0,0,.25);
+    padding: 32px 32px 26px; box-shadow: 0 30px 60px rgba(40,0,0,.3);
   }
   .dates h2 { font-size: 22px; }
   .dates .divider { margin: 14px 0 12px; }
@@ -142,7 +136,7 @@
     padding: 16px 0; border-bottom: 1px solid var(--navy-line);
   }
   .date-when { font-family: var(--serif); color: var(--gold); font-size: 20px; font-variant: small-caps; line-height: 1.2; }
-  .date-what { font-size: 14.5px; color: #dfe2ea; }
+  .date-what { font-size: 14.5px; color: rgba(255,255,255,.92); }
   .dates-note { font-size: 13.5px; color: var(--muted-dark); margin-top: 18px; }
 
   /* Services */
@@ -151,9 +145,9 @@
   .section-head p { color: var(--muted); margin-top: 22px; font-size: 16.5px; }
   .services { display: grid; grid-template-columns: repeat(3, 1fr); }
   .service { padding: 0 36px; }
-  .service + .service { border-left: 1px solid rgba(217,170,78,.55); }
+  .service + .service { border-left: 1px solid rgba(126,5,5,.22); }
   .service-icon {
-    width: 58px; height: 58px; border-radius: 50%; background: var(--navy); color: var(--gold);
+    width: 58px; height: 58px; border-radius: 50%; background: var(--brand); color: #fff;
     display: grid; place-items: center; margin: 0 auto 22px; box-shadow: 0 0 0 3px var(--white), 0 0 0 4.5px var(--gold);
   }
   .service-icon svg { width: 24px; height: 24px; }
@@ -187,7 +181,7 @@
     display: grid; place-items: center; font-family: var(--serif); color: var(--gold); font-size: 22px;
   }
   .step h3 { font-family: var(--sans); font-weight: 600; font-size: 17px; margin-bottom: 10px; }
-  .step p { font-size: 14.5px; color: #c9cedb; }
+  .step p { font-size: 14.5px; color: rgba(255,255,255,.8); }
 
   /* Values */
   .values { padding: 80px 0; }
@@ -212,15 +206,15 @@
   }
   .c-icon svg { width: 18px; height: 18px; }
   .c-label { font-size: 12.5px; color: var(--muted-dark); display: block; }
-  .c-value { font-size: 15.5px; font-weight: 500; display: block; margin-top: 4px; overflow-wrap: anywhere; }
+  .c-value { font-size: 15.5px; font-weight: 500; display: block; margin-top: 4px; overflow-wrap: break-word; }
 
   footer { border-top: 1px solid var(--navy-line); padding: 30px 0 34px; }
   .foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .foot .brand { gap: 12px; }
-  .foot .seal { width: 38px; height: 38px; font-size: 11.5px; }
+  .foot .brand-logo { height: 46px; }
   .foot .brand-name { font-size: 15px; font-weight: 400; }
   .foot-right { text-align: right; }
-  .foot-tag { font-size: 11px; letter-spacing: .16em; color: var(--gold); }
+  .foot-tag { font-size: 12px; letter-spacing: .08em; color: var(--gold); }
   .foot-copy { font-size: 12.5px; color: var(--muted-dark); margin-top: 4px; }
 
   /* Floating WhatsApp (mobile) */
@@ -239,10 +233,10 @@
     .nav-links {
       display: none; position: absolute; top: 84px; left: 0; right: 0;
       flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 20px;
-      background: var(--navy); border-bottom: 1px solid var(--navy-line);
+      background: #fff; border-bottom: 1px solid #eadfdf;
     }
     .nav-links.open { display: flex; }
-    .nav-links a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--navy-line); }
+    .nav-links a:not(.btn) { padding: 14px 0; border-bottom: 1px solid #f0e6e6; }
     .nav-links .btn { margin-top: 16px; padding: 13px 20px; }
     .menu-toggle { display: grid; }
     .hero { padding: 64px 0 72px; }
@@ -250,7 +244,7 @@
     .hero-arc { top: 22%; left: -30%; width: 130%; opacity: .5; }
     .services { grid-template-columns: 1fr; gap: 48px; }
     .service { padding: 0; max-width: 460px; margin: 0 auto; width: 100%; }
-    .service + .service { border-left: 0; border-top: 1px solid rgba(217,170,78,.55); padding-top: 48px; }
+    .service + .service { border-left: 0; border-top: 1px solid rgba(126,5,5,.22); padding-top: 48px; }
     .steps { grid-template-columns: 1fr 1fr; gap: 44px 28px; }
     .values-grid { grid-template-columns: 1fr; gap: 36px; }
     .wa-float { display: grid; }
@@ -260,11 +254,10 @@
     .nav { height: 72px; }
     .nav-links { top: 72px; padding: 8px 16px 20px; }
     html { scroll-padding-top: 72px; }
-    .seal { width: 44px; height: 44px; font-size: 13px; }
-    .brand { gap: 12px; }
+        .brand { gap: 12px; }
     .brand-text { padding-left: 12px; }
-    .brand-name { font-size: 15px; }
-    .brand-tag { font-size: 8.5px; letter-spacing: .12em; }
+    .brand-logo { height: 44px; }
+    .brand-tag { font-size: 9.5px; }
     .btn-row .btn { flex: 1 1 100%; }
     .dates { padding: 24px 20px 20px; }
     .date-row { grid-template-columns: 92px 1fr; gap: 12px; }
@@ -294,11 +287,10 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Tax &amp; Accounting Solutions, home">
-      <span class="seal">TAS</span>
+    <a class="brand" href="#top" aria-label="Danis Associates, home">
+      <img class="brand-logo" src="assets/logo-maroon.png" alt="Danis Associates" width="138" height="54">
       <span class="brand-text">
-        <span class="brand-name">Tax &amp; Accounting Solutions</span>
-        <span class="brand-tag">PRECISION. COMPLIANCE. GROWTH.</span>
+        <span class="brand-tag">Certified Public Accountants<br>&amp; Tax Consultants</span>
       </span>
     </a>
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
@@ -309,7 +301,7 @@
       <a href="#second-opinion">Second opinion</a>
       <a href="#how-it-works">How it works</a>
       <a href="#contact">Contact</a>
-      <a class="btn btn-gold wa-link" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-gold wa-link" href="https://wa.me/255755656369" target="_blank" rel="noopener">Chat on WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -319,16 +311,16 @@
   <!-- Hero -->
   <section class="hero dark">
     <svg class="hero-arc" viewBox="0 0 800 400" fill="none" aria-hidden="true">
-      <defs><linearGradient id="arcfade" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#d9aa4e" stop-opacity=".55"/><stop offset=".7" stop-color="#d9aa4e" stop-opacity=".25"/><stop offset="1" stop-color="#d9aa4e" stop-opacity="0"/></linearGradient></defs>
+      <defs><linearGradient id="arcfade" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity=".16"/><stop offset=".7" stop-color="#ffffff" stop-opacity=".08"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>
       <path d="M-20 400 C 120 150, 420 40, 800 60" stroke="url(#arcfade)" stroke-width="26" stroke-linecap="round"/>
     </svg>
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Tunarahisisha kodi na usajili wa biashara yako</p>
         <h1>Your taxes and registrations, handled properly.</h1>
-        <p class="hero-lede">Tax &amp; Accounting Solutions helps businesses in Tanzania register, file and stay on the right side of TRA and BRELA. You get a tax professional who knows audits, VAT refunds and corporate tax, and a fixed fee agreed before any work starts.</p>
+        <p class="hero-lede">Danis Associates helps businesses in Tanzania register, file and stay on the right side of TRA and BRELA. You work with Certified Public Accountants and tax consultants who know audits, tax examinations, VAT refunds and corporate tax, for a fee agreed before any work starts.</p>
         <div class="btn-row">
-          <a class="btn btn-gold wa-link" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+          <a class="btn btn-gold wa-link" href="https://wa.me/255755656369" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
           <a class="btn btn-ghost" href="#services">See services</a>
         </div>
       </div>
@@ -433,7 +425,7 @@
   <!-- Values -->
   <section class="values">
     <div class="wrap values-grid">
-      <div><h3>Real tax experience</h3><p>Hands-on work on TRA audits, VAT refund claims, corporate income tax and IFRS reporting for established companies.</p></div>
+      <div><h3>Certified and experienced</h3><p>Certified Public Accountants in public practice and tax consultants, with hands-on work on TRA audits, tax examinations, VAT refunds and IFRS reporting.</p></div>
       <div><h3>Straight answers</h3><p>Plain explanations in English or Kiswahili, including when the honest answer is that you owe the tax.</p></div>
       <div><h3>Confidential</h3><p>Your documents and figures stay between us, and are used only for the work you asked for.</p></div>
     </div>
@@ -446,49 +438,50 @@
         <p class="eyebrow">Wasiliana nasi</p>
         <h2>Tell us what you need.<br>We'll reply the same day.</h2>
         <div class="btn-row">
-          <a class="btn btn-gold wa-link" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
-          <a class="btn btn-ghost" href="tel:+255XXXXXXXXX"><svg><use href="#i-phone"/></svg>Call us</a>
+          <a class="btn btn-gold wa-link" href="https://wa.me/255755656369" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Chat on WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+255767889960"><svg><use href="#i-phone"/></svg>Call us</a>
         </div>
       </div>
       <div class="contact-cards">
-        <a class="c-card" href="tel:+255XXXXXXXXX">
+        <a class="c-card" href="tel:+255767889960">
           <span class="c-icon"><svg><use href="#i-phone"/></svg></span>
-          <span class="c-label">Phone and WhatsApp</span>
-          <span class="c-value">+255 XXX XXX XXX</span>
+          <span class="c-label">Office phone</span>
+          <span class="c-value">+255 767 889 960</span>
+          <span class="c-label" style="margin-top:4px">0628 304 441 · 0755 738 183</span>
         </a>
-        <a class="c-card" href="mailto:you@example.com">
+        <a class="c-card" href="mailto:infodanisassociates@gmail.com">
           <span class="c-icon"><svg><use href="#i-mail"/></svg></span>
           <span class="c-label">Email</span>
-          <span class="c-value">you@example.com</span>
+          <span class="c-value">infodanisassociates<wbr>@gmail.com</span>
         </a>
         <div class="c-card">
           <span class="c-icon"><svg><use href="#i-pin"/></svg></span>
-          <span class="c-label">Location</span>
-          <span class="c-value">[YOUR AREA], Dar es Salaam</span>
+          <span class="c-label">Postal address</span>
+          <span class="c-value">P.O. Box 2786, Dar es Salaam, Tanzania</span>
         </div>
-        <div class="c-card">
-          <span class="c-icon"><svg><use href="#i-clock"/></svg></span>
-          <span class="c-label">Hours</span>
-          <span class="c-value">[YOUR HOURS]</span>
-        </div>
+        <a class="c-card" href="https://wa.me/255755656369" target="_blank" rel="noopener">
+          <span class="c-icon"><svg><use href="#i-wa"/></svg></span>
+          <span class="c-label">Tax &amp; Legal · WhatsApp</span>
+          <span class="c-value">Obren Allan Kitilya</span>
+          <span class="c-label" style="margin-top:4px">Manager · +255 755 656 369</span>
+        </a>
       </div>
     </div>
     <footer>
       <div class="wrap foot">
         <a class="brand" href="#top">
-          <span class="seal">TAS</span>
-          <span class="brand-name">Tax &amp; Accounting Solutions</span>
+          <img class="brand-logo" src="assets/logo-white.png" alt="Danis Associates" width="118" height="46">
         </a>
         <div class="foot-right">
-          <div class="foot-tag">PRECISION. COMPLIANCE. GROWTH.</div>
-          <div class="foot-copy">&copy; <span id="year">2026</span> Tax &amp; Accounting Solutions. Dar es Salaam, Tanzania.</div>
+          <div class="foot-tag">Certified Public Accountants in Public Practice &amp; Tax Consultants</div>
+          <div class="foot-copy">&copy; <span id="year">2026</span> Danis Associates. Dar es Salaam, Tanzania.</div>
         </div>
       </div>
     </footer>
   </section>
 </main>
 
-<a class="wa-float wa-link" href="https://wa.me/255XXXXXXXXX" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
+<a class="wa-float wa-link" href="https://wa.me/255755656369" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
 <script>
   // Mobile menu
@@ -503,7 +496,7 @@
   });
 
   // Pre-fill the WhatsApp message so enquiries arrive with context
-  var msg = encodeURIComponent('Hello Tax & Accounting Solutions, I would like help with: ');
+  var msg = encodeURIComponent('Hello Danis Associates, I would like help with: ');
   document.querySelectorAll('.wa-link').forEach(function (a) { a.href += '?text=' + msg; });
 
   document.getElementById('year').textContent = new Date().getFullYear();
