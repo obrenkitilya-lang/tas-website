@@ -10,10 +10,10 @@ from pathlib import Path
 OUT = Path(__file__).resolve().parent.parent / "assets" / "img"
 
 THEMES = {
-    "maroon": dict(sky=("#8c0909", "#3d0202"), far="#5a0303", near="#2a0101", accent="#d6a447", light="#f3e3c3"),
-    "gold":   dict(sky=("#f3e3c3", "#d6a447"), far="#a2650f", near="#5a0303", accent="#7e0505", light="#fff7e8"),
-    "dark":   dict(sky=("#3a3232", "#1f1b1b"), far="#4a3d3a", near="#120f0f", accent="#d6a447", light="#f3e3c3"),
-    "cream":  dict(sky=("#faf7f2", "#ecdcc0"), far="#c9a77a", near="#7e0505", accent="#d6a447", light="#ffffff"),
+    "navy":   dict(sky=("#222d4a", "#0d1220"), far="#2a3350", near="#090d18", accent="#d9aa4e", light="#f3e3c3"),
+    "gold":   dict(sky=("#f3e3c3", "#d9aa4e"), far="#a87a22", near="#131a2c", accent="#131a2c", light="#fff7e8"),
+    "dark":   dict(sky=("#2b2f3a", "#151820"), far="#3a3f4d", near="#0b0d12", accent="#d9aa4e", light="#f3e3c3"),
+    "cream":  dict(sky=("#f8f6f1", "#e9dcc4"), far="#c9a77a", near="#131a2c", accent="#d9aa4e", light="#ffffff"),
 }
 W, H = 800, 600
 
@@ -186,19 +186,20 @@ def dome(theme):
 
 
 ART = {
-    "hero.svg": lambda: skyline("maroon", 5),
-    "audit.svg": lambda: skyline("dark", 9),
+    "hero.svg": lambda: skyline("navy", 5),
     "tax.svg": lambda: documents("gold"),
-    "advisory.svg": lambda: chart("maroon"),
-    "outsourcing.svg": lambda: facade("cream"),
-    "ngos.svg": lambda: network("maroon"),
-    "financial.svg": lambda: columns("cream"),
-    "trade.svg": lambda: factory("gold"),
-    "public.svg": lambda: dome("dark"),
+    "accounting.svg": lambda: chart("navy"),
+    "registration.svg": lambda: facade("cream"),
+    "advisory.svg": lambda: skyline("dark", 9),
+    "small-business.svg": lambda: factory("gold"),
+    "companies.svg": lambda: columns("cream"),
+    "ngos.svg": lambda: network("navy"),
 }
 
 if __name__ == "__main__":
     OUT.mkdir(parents=True, exist_ok=True)
+    for old in OUT.glob("*.svg"):
+        old.unlink()
     for name, fn in ART.items():
         (OUT / name).write_text(fn(), encoding="utf-8")
         print("wrote", name)
